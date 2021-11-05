@@ -123,13 +123,13 @@ class ScreenOneController: UINavigationController {
 		screenThreeController.tableViewForScreenThree.center = view.center
 		
 		let nextViewController = storyBoard.instantiateViewController(identifier: "findCityView")
-		self.pushViewController(nextViewController, animated: true)
+		pushViewController(nextViewController, animated: true)
 		
 		navigationBar.topItem?.backBarButtonItem?.tintColor = .gray
 		navigationBar.topItem?.backBarButtonItem = .init(image: UIImage(),
-															  style: .plain,
-															  target: self,
-															  action: #selector(deleteCurrentScene))
+														 style: .plain,
+														 target: self,
+														 action: #selector(deleteCurrentScene))
 		
 	}
 	
