@@ -10,12 +10,10 @@ class ScreenOneCollectionDataSource: NSObject, UICollectionViewDataSource, UICol
         return 5
     }
     
-    
     //Space between cells
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 9
     }
-    
     
     //Height and width of cell
     internal func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
