@@ -13,10 +13,13 @@ class ScreenOneController: UINavigationController {
 	override func viewDidLoad() {
 		
 		super.viewDidLoad()
+		parcer.startProcess()
 		
 		//Waiting for JSON data download (bad solution)
-		parcer.startProcess()
-		if jsonData == nil { sleep(3) }
+		while jsonData == nil {
+			sleep(3)
+			parcer.startProcess()
+		}
 		
 		tableViewController.viewDidLoad()
 		createNavigationBar()
