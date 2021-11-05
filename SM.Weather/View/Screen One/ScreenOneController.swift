@@ -70,15 +70,11 @@ class ScreenOneController: UINavigationController {
 			overrideUserInterfaceStyle = .dark
 			
 			for item in navigationBar.topItem!.leftBarButtonItems! {
-				
 				item.tintColor = .white
-				
 			}
 			
 			for item in navigationBar.topItem!.rightBarButtonItems! {
-				
 				item.tintColor = navigationBar.topItem!.leftBarButtonItem?.tintColor
-				
 			}
 			
 		} else {
@@ -86,15 +82,11 @@ class ScreenOneController: UINavigationController {
 			overrideUserInterfaceStyle = .light
 			
 			for item in navigationBar.topItem!.leftBarButtonItems! {
-				
 				item.tintColor = .gray
-				
 			}
 			
 			for item in navigationBar.topItem!.rightBarButtonItems! {
-				
 				item.tintColor = navigationBar.topItem?.leftBarButtonItem?.tintColor
-				
 			}
 			
 		}
