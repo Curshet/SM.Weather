@@ -6,7 +6,7 @@ xcuserdata/
 # Xcode service files
 *.xcscmblueprint
 *.xccheckout
-*.xcodeproj/*
+*.xcodeproj
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
