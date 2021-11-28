@@ -1,6 +1,8 @@
 # SM.Weather
 
-Application, which shows the weather in Moscow with Dark Mode support (available iOS 13).
+Application, which shows the weather in Moscow with Dark Mode support (available Apple iOS 13).
+
+**Stack**: Swift, UIKit, API, JSON, MVP.
 
 
-<img width="326" alt="Снимок экрана 2021-11-05 в 3 55 14" src="https://user-images.githubusercontent.com/76473178/140440829-2246c1dc-8713-4ef2-bd94-7f14cd43a559.png"><img width="324" alt="Снимок экрана 2021-11-05 в 3 55 38" src="https://user-images.githubusercontent.com/76473178/140440931-efc7add4-9227-4910-9d51-4850e69dcd9d.png">
+<img width="326" alt="light" src="https://user-images.githubusercontent.com/76473178/143779146-84111c2f-3ad1-496a-82ef-8168bdd36b15.png"><img width="324" alt="dark" src="https://user-images.githubusercontent.com/76473178/143779170-7ee3c10b-da1a-491d-99de-833848a1e6e6.png">
