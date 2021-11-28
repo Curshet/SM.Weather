@@ -1,11 +1,15 @@
 # User settings
 xcuserdata/
+/build
+/buildFB
 .DS_Store
+.idea
 
 
 # Xcode service files
 *.xcscmblueprint
 *.xccheckout
+*.xcarchive
 *.xcodeproj
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
@@ -50,3 +54,8 @@ fastlane/test_output
 
 # Code Injection
 iOSInjectionProject/
+
+
+# Pods
+Pods/
+Podfile.lock
