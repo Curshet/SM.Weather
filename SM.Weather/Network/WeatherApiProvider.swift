@@ -10,8 +10,7 @@ class WeatherApiProvider: WeatherApiProviderProtocol {
 		
 		let urlString = "https://api.openweathermap.org/data/2.5/forecast?q=\(currenttCity)&units=metric&lang=ru&appid=\(keyForRequest)"
         
-        let request = AF.request(urlString)
-        request.responseJSON {
+        AF.request(urlString).responseJSON {
             
             guard $0.error == nil else {
                 print("Error data downloading: \($0.error!)!")
