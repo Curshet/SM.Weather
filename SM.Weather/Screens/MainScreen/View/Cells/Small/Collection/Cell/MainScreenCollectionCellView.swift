@@ -1,5 +1,5 @@
 import UIKit
-
+import SnapKit
 
 class MainScreenCollectionCellView {
 	
@@ -30,10 +30,6 @@ class MainScreenCollectionCellView {
 		}()
 		downLabel.textAlignment = .center
 		downLabel.font = UIFont.boldSystemFont(ofSize: 14)
-		
-		upLabel.disableAutoResizingMask()
-		middleImageView.disableAutoResizingMask()
-		downLabel.disableAutoResizingMask()
 	}
 	
 	private func setupSubViewsInCell(cell: MainScreenCollectionCell) {
@@ -43,20 +39,20 @@ class MainScreenCollectionCellView {
 	}
 	
 	private func setupConstraintsForSubviews(cell: MainScreenCollectionCell) {
-		NSLayoutConstraint.activate([
-			upLabel.topAnchor.constraint(equalTo: cell.topAnchor, constant: 10),
-			upLabel.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -10),
-			upLabel.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 10),
-			
-			middleImageView.topAnchor.constraint(equalTo: cell.topAnchor, constant: 35),
-			middleImageView.widthAnchor.constraint(equalTo: cell.widthAnchor, multiplier: 0.4),
-			middleImageView.heightAnchor.constraint(equalTo: cell.heightAnchor,multiplier: 0.3),
-			middleImageView.centerXAnchor.constraint(equalTo: cell.centerXAnchor),
-			
-			downLabel.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 10),
-			downLabel.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -10),
-			downLabel.bottomAnchor.constraint(equalTo: cell.bottomAnchor, constant: -10)
-		])
+        upLabel.snp.makeConstraints {
+            $0.top.trailing.leading.equalTo(cell).inset(10)
+        }
+        
+        middleImageView.snp.makeConstraints {
+            $0.centerX.equalTo(cell)
+            $0.top.equalTo(cell).inset(35)
+            $0.width.equalTo(cell).multipliedBy(0.4)
+            $0.height.equalTo(cell).multipliedBy(0.3)
+        }
+        
+        downLabel.snp.makeConstraints {
+            $0.bottom.leading.trailing.equalTo(cell).inset(10)
+        }
 	}
 	
 	public func setupContentToFieldsOfCell(_ content: CollectionCellData) {
