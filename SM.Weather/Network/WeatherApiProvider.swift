@@ -1,10 +1,10 @@
 import Foundation
+import Alamofire
 
+fileprivate let currenttCity = "Moscow"
+fileprivate let keyForRequest = "34911b62733b8414cf89b7a25783adf5"
 
 class WeatherApiProvider: WeatherApiProviderProtocol {
-	
-	private let currenttCity = "Moscow"
-	private let keyForRequest = "34911b62733b8414cf89b7a25783adf5"
 	
 	public func requestWeatherDouble(success: @escaping (DataCell) -> Void, fail: @escaping () -> Void) {
 		
@@ -27,20 +27,15 @@ class WeatherApiProvider: WeatherApiProviderProtocol {
 			}
 			
 			do {
-
 				let data = try JSONDecoder().decode(DataCell.self, from: data!)
 				success(data)
 				print("Data was downloaded from JSON!")
-				
 			} catch {
-				
 				print("We have an error \(error) of parcing data!")
 				fail()
-				
 			}
 			
 		} .resume()
-		
 	}
 	
 }
