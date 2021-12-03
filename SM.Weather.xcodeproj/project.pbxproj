@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE266954271455B1002D794F /* MainScreenNavBarSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE266953271455B1002D794F /* MainScreenNavBarSet.swift */; };
-		CE266956271461E8002D794F /* DisableAutoResizingMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE266955271461E8002D794F /* DisableAutoResizingMask.swift */; };
+		CE1FF3F3275A675F00711CA6 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE1FF3F2275A675F00711CA6 /* Alamofire */; };
+		CE1FF3F6275A677F00711CA6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE1FF3F5275A677F00711CA6 /* SnapKit */; };
+		CE1FF3F8275A67DC00711CA6 /* MainScreenNavigationBarSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FF3F7275A67DC00711CA6 /* MainScreenNavigationBarSetup.swift */; };
 		CE385666270C8A8F00B337AC /* DataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE385665270C8A8F00B337AC /* DataCell.swift */; };
 		CE385668270C8B3D00B337AC /* WeatherApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE385667270C8B3D00B337AC /* WeatherApiProvider.swift */; };
 		CE38566C270C90F100B337AC /* MainScreenTableSmallCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38566B270C90F100B337AC /* MainScreenTableSmallCell.swift */; };
@@ -38,8 +39,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CE266953271455B1002D794F /* MainScreenNavBarSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenNavBarSet.swift; sourceTree = "<group>"; };
-		CE266955271461E8002D794F /* DisableAutoResizingMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisableAutoResizingMask.swift; sourceTree = "<group>"; };
+		CE1FF3F0275A674D00711CA6 /* Alamofire */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Alamofire; path = Libraries/Alamofire; sourceTree = "<group>"; };
+		CE1FF3F4275A677A00711CA6 /* SnapKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SnapKit; path = Libraries/SnapKit; sourceTree = "<group>"; };
+		CE1FF3F7275A67DC00711CA6 /* MainScreenNavigationBarSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenNavigationBarSetup.swift; sourceTree = "<group>"; };
 		CE385665270C8A8F00B337AC /* DataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCell.swift; sourceTree = "<group>"; };
 		CE385667270C8B3D00B337AC /* WeatherApiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApiProvider.swift; sourceTree = "<group>"; };
 		CE38566B270C90F100B337AC /* MainScreenTableSmallCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenTableSmallCell.swift; sourceTree = "<group>"; };
@@ -75,12 +77,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1FF3F3275A675F00711CA6 /* Alamofire in Frameworks */,
+				CE1FF3F6275A677F00711CA6 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE1FF3EF275A674D00711CA6 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				CE1FF3F0275A674D00711CA6 /* Alamofire */,
+				CE1FF3F4275A677A00711CA6 /* SnapKit */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		CE1FF3F1275A675F00711CA6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE463FF7270F088600D9A731 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,7 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				CE4B16D427273646009464DD /* DarkMode.swift */,
-				CE266955271461E8002D794F /* DisableAutoResizingMask.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -132,7 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				CECF6515270B4CF200232B28 /* MainScreenViewController.swift */,
-				CE266953271455B1002D794F /* MainScreenNavBarSet.swift */,
+				CE1FF3F7275A67DC00711CA6 /* MainScreenNavigationBarSetup.swift */,
 			);
 			path = NavigationController;
 			sourceTree = "<group>";
@@ -173,8 +192,10 @@
 		CEE377F726E8A61B00AC798D = {
 			isa = PBXGroup;
 			children = (
+				CE1FF3EF275A674D00711CA6 /* Packages */,
 				CEE3780126E8A61B00AC798D /* Products */,
 				CEE3780226E8A61B00AC798D /* SM.Weather */,
+				CE1FF3F1275A675F00711CA6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -245,6 +266,10 @@
 			dependencies = (
 			);
 			name = Smorodina.Weather;
+			packageProductDependencies = (
+				CE1FF3F2275A675F00711CA6 /* Alamofire */,
+				CE1FF3F5275A677F00711CA6 /* SnapKit */,
+			);
 			productName = Smorodina.Weather;
 			productReference = CEE3780026E8A61B00AC798D /* SM.Weather.app */;
 			productType = "com.apple.product-type.application";
@@ -299,6 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1FF3F8275A67DC00711CA6 /* MainScreenNavigationBarSetup.swift in Sources */,
 				CE4B16D527273646009464DD /* DarkMode.swift in Sources */,
 				CEFA25112715A2C000A26B97 /* MainScreenCollectionView.swift in Sources */,
 				CEE17D87272F399B005D96A7 /* WeatherApiProviderProtocol.swift in Sources */,
@@ -307,7 +333,6 @@
 				CE385666270C8A8F00B337AC /* DataCell.swift in Sources */,
 				CECF651C270B565E00232B28 /* MainScreenDataSource.swift in Sources */,
 				CE9132BC271DB74F00856560 /* TableSmallCellData.swift in Sources */,
-				CE266954271455B1002D794F /* MainScreenNavBarSet.swift in Sources */,
 				CEF877B1273E750D006FE567 /* MainScreenTableSmallCellView.swift in Sources */,
 				CE38566C270C90F100B337AC /* MainScreenTableSmallCell.swift in Sources */,
 				CECF6518270B4D5900232B28 /* MainScreenRootViewController.swift in Sources */,
@@ -323,7 +348,6 @@
 				CEF877AF273E65B5006FE567 /* ErrorAlertController.swift in Sources */,
 				CE9132BE271DB77F00856560 /* CollectionCellData.swift in Sources */,
 				CE385668270C8B3D00B337AC /* WeatherApiProvider.swift in Sources */,
-				CE266956271461E8002D794F /* DisableAutoResizingMask.swift in Sources */,
 				CECF651F270B5DDA00232B28 /* MainScreenBigCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,6 +544,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE1FF3F2275A675F00711CA6 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Alamofire;
+		};
+		CE1FF3F5275A677F00711CA6 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CEE377F826E8A61B00AC798D /* Project object */;
 }
