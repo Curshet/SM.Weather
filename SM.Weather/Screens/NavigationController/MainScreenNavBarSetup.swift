@@ -1,7 +1,6 @@
 import UIKit
 
-
-class MainScreenNavBarSet {
+class MainScreenNavBarSetup {
 	
 	public func navigationBarStyle(_ viewController: MainScreenViewController) {
 		viewController.navigationBar.shadowImage = UIImage()
