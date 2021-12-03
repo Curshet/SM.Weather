@@ -1,5 +1,5 @@
 import UIKit
-
+import SnapKit
 
 class MainScreenTableSmallCellView {
 	
@@ -44,14 +44,6 @@ class MainScreenTableSmallCellView {
 		rightImageView.contentMode = .scaleAspectFit
 	
 		separatorView.backgroundColor =  .lightGray
-
-		backView.disableAutoResizingMask()
-		leftLabel.disableAutoResizingMask()
-		rightLabelWithMainTemp.disableAutoResizingMask()
-		rightLabelWithTemFeelsLike.disableAutoResizingMask()
-		rightImageView.disableAutoResizingMask()
-		separatorView.disableAutoResizingMask()
-		collectionView.disableAutoResizingMask()
 	}
 	
 	private func setupSubViewsInCell(cell: MainScreenTableSmallCell) {
@@ -65,38 +57,46 @@ class MainScreenTableSmallCellView {
 	}
 	
 	private func setupConstraintsForSubviews(cell: MainScreenTableSmallCell) {
-		NSLayoutConstraint.activate([
-			backView.topAnchor.constraint(equalTo: cell.topAnchor, constant: 5),
-			backView.bottomAnchor.constraint(equalTo: cell.bottomAnchor, constant: -5),
-			backView.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 10),
-			backView.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -10),
-			
-			leftLabel.topAnchor.constraint(equalTo: backView.topAnchor, constant: 16),
-			leftLabel.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -137),
-			leftLabel.leadingAnchor.constraint(equalTo: backView.leadingAnchor, constant: 20),
-			
-			rightLabelWithMainTemp.topAnchor.constraint(equalTo: backView.topAnchor, constant: 16),
-			rightLabelWithMainTemp.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -137),
-			rightLabelWithMainTemp.trailingAnchor.constraint(equalTo: backView.trailingAnchor, constant: -95),
-			
-			rightLabelWithTemFeelsLike.topAnchor.constraint(equalTo: backView.topAnchor, constant: 16),
-			rightLabelWithTemFeelsLike.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -137),
-			rightLabelWithTemFeelsLike.trailingAnchor.constraint(equalTo: backView.trailingAnchor, constant: -60),
-			
-			rightImageView.topAnchor.constraint(equalTo: backView.topAnchor, constant: 10),
-			rightImageView.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -137),
-			rightImageView.trailingAnchor.constraint(equalTo: backView.trailingAnchor, constant: -20),
-			
-			separatorView.topAnchor.constraint(equalTo: backView.topAnchor, constant: 47),
-			separatorView.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -131),
-			separatorView.leadingAnchor.constraint(equalTo: backView.leadingAnchor, constant: 20),
-			separatorView.trailingAnchor.constraint(equalTo: backView.trailingAnchor, constant: -20),
-
-			collectionView.topAnchor.constraint(equalTo: backView.topAnchor, constant: 57),
-			collectionView.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -10),
-			collectionView.leadingAnchor.constraint(equalTo: backView.leadingAnchor),
-			collectionView.trailingAnchor.constraint(equalTo: backView.trailingAnchor)
-		])
+        backView.snp.makeConstraints {
+            $0.top.bottom.equalTo(cell).inset(5)
+            $0.leading.trailing.equalTo(cell).inset(16)
+        }
+        
+        leftLabel.snp.makeConstraints {
+            $0.top.equalTo(backView).inset(16)
+            $0.bottom.equalTo(backView).inset(137)
+            $0.leading.equalTo(backView).inset(30)
+        }
+        
+        rightLabelWithMainTemp.snp.makeConstraints {
+            $0.top.equalTo(backView).inset(16)
+            $0.bottom.equalTo(backView).inset(137)
+            $0.trailing.equalTo(backView).inset(95)
+        }
+        
+        rightLabelWithTemFeelsLike.snp.makeConstraints {
+            $0.top.equalTo(backView).inset(16)
+            $0.bottom.equalTo(backView).inset(137)
+            $0.trailing.equalTo(backView).inset(60)
+        }
+        
+        rightImageView.snp.makeConstraints {
+            $0.top.equalTo(backView).inset(10)
+            $0.bottom.equalTo(backView).inset(137)
+            $0.trailing.equalTo(backView).inset(20)
+        }
+        
+        separatorView.snp.makeConstraints {
+            $0.top.equalTo(backView).inset(47)
+            $0.bottom.equalTo(backView).inset(131)
+            $0.leading.trailing.equalTo(backView).inset(20)
+        }
+        
+        collectionView.snp.makeConstraints {
+            $0.top.equalTo(backView).inset(57)
+            $0.bottom.equalTo(backView).inset(10)
+            $0.leading.trailing.equalTo(backView)
+        }
 	}
 	
 	public func setupContentToFieldsOfCell(_ content: TableSmallCellData) {
