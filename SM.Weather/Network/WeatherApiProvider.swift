@@ -9,33 +9,32 @@ class WeatherApiProvider: WeatherApiProviderProtocol {
 	public func requestWeatherInfo(success: @escaping (DataCell) -> Void, fail: @escaping () -> Void) {
 		
 		let urlString = "https://api.openweathermap.org/data/2.5/forecast?q=\(currenttCity)&units=metric&lang=ru&appid=\(keyForRequest)"
-		
-		let url = URL(string: urlString)
-		let session = URLSession(configuration: .default)
-		session.dataTask(with: url!) { (data, response, error) in
-			
-			guard error == nil else {
-				print("We have an error: \(error!)!")
-				fail()
-				return
-			}
-			
-			guard data != nil else {
-				print("We have no data!")
-				fail()
-				return
-			}
-			
-			do {
-				let data = try JSONDecoder().decode(DataCell.self, from: data!)
-				success(data)
-				print("Data was downloaded from JSON!")
-			} catch {
-				print("We have an error \(error) of parcing data!")
-				fail()
-			}
-			
-		} .resume()
+        
+        let request = AF.request(urlString)
+        request.responseJSON {
+            
+            guard $0.error == nil else {
+                print("Error data downloading: \($0.error!)!")
+                fail()
+                return
+            }
+            
+            guard $0.data != nil else {
+                print("No downloaded data!")
+                fail()
+                return
+            }
+            
+            do {
+                let data = try JSONDecoder().decode(DataCell.self, from: $0.data!)
+                success(data)
+                print("Data was downloaded from network!")
+            } catch {
+                print("Error of data parcing!")
+                fail()
+            }
+
+        }
         
 	}
 	

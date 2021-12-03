@@ -94,13 +94,6 @@
 			name = Packages;
 			sourceTree = "<group>";
 		};
-		CE1FF3F1275A675F00711CA6 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		CE463FF7270F088600D9A731 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,7 +188,6 @@
 				CE1FF3EF275A674D00711CA6 /* Packages */,
 				CEE3780126E8A61B00AC798D /* Products */,
 				CEE3780226E8A61B00AC798D /* SM.Weather */,
-				CE1FF3F1275A675F00711CA6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
