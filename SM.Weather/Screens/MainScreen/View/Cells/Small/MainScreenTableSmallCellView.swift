@@ -59,7 +59,7 @@ class MainScreenTableSmallCellView {
 	private func setupConstraintsForSubviews(cell: MainScreenTableSmallCell) {
         backView.snp.makeConstraints {
             $0.top.bottom.equalTo(cell).inset(5)
-            $0.leading.trailing.equalTo(cell).inset(16)
+            $0.leading.trailing.equalTo(cell).inset(18)
         }
         
         leftLabel.snp.makeConstraints {
