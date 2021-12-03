@@ -12,7 +12,7 @@ class MainScreenPresenter: MainScreenPresenterProtocol {
 		
 		let request = WeatherApiProvider()
 		requestDataFromNetwork = request
-		requestDataFromNetwork?.requestWeatherDouble(success: { [weak self] (data) in
+		requestDataFromNetwork?.requestWeatherInfo(success: { [weak self] (data) in
 			self?.setDataFromJson(data)
 		},
 		fail: { [weak self] in
