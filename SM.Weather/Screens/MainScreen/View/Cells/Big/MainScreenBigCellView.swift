@@ -48,7 +48,7 @@ class MainScreenTableBigCellView {
 	private func setupConstraintsForSubviews(cell: MainScreenTableBigCell) {
         backImageView.snp.makeConstraints {
             $0.top.equalTo(cell)
-            $0.bottom.leading.trailing.equalTo(16)
+            $0.bottom.leading.trailing.equalTo(cell).inset(16)
         }
         
         labelUp.snp.makeConstraints {
