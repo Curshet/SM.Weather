@@ -1,6 +1,5 @@
 import UIKit
 
-
 class MainScreenTableBigCell: UITableViewCell {
 
 	static let bigCellIdentifier = "BigTableCell"

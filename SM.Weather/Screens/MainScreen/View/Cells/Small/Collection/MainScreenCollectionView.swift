@@ -1,6 +1,5 @@
 import UIKit
 
-
 class MainScreenCollectionView: UICollectionView {
 	
 	private let customDataSource = MainScreenCollectionViewDataSource()

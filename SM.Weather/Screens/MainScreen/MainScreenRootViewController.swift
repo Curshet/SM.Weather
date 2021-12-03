@@ -1,6 +1,5 @@
 import UIKit
 
-
 class MainScreenRootViewController: UITableViewController, MainScreenRootViewProtocol {
 	
 	private var presenter: MainScreenPresenterProtocol!

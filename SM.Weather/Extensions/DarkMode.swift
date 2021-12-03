@@ -1,6 +1,5 @@
 import UIKit
 
-
 extension UIViewController {
 	
 	static var isDarkMode = false

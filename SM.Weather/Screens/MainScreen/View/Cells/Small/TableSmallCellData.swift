@@ -1,6 +1,5 @@
 import Foundation
 
-
 struct TableSmallCellData: TableCellProtocol {
 	let leftLabelWithDateText: String
 	let rightLabelOneWithCurrentTempText: String

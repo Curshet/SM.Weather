@@ -1,6 +1,5 @@
 import UIKit
 
-
 class ErrorAlertController {
 	
 	public func returnErrorMessage() -> UIAlertController {

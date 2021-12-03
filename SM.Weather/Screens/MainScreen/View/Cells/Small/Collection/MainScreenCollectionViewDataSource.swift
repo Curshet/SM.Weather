@@ -1,6 +1,5 @@
 import UIKit
 
-
 fileprivate let widthOfCollectionCell = 65
 fileprivate let heightOfCollectionCell = 100
 fileprivate let minimumLineSpacingForSectionAt = CGFloat(9)

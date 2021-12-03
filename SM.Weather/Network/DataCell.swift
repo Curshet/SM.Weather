@@ -1,6 +1,5 @@
 import Foundation
 
-
 struct DataCell: Codable {
     let cod: String
     let message, cnt: Int

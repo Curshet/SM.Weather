@@ -1,6 +1,5 @@
 import UIKit
 
-
 class MainScreenView: UITableView {
 	
 	private let customDataSource = MainScreenDataSource()

@@ -1,6 +1,5 @@
 import UIKit
 
-
 fileprivate let heightOfBigTableCell = CGFloat(290)
 fileprivate let heightOfSmallTableCell = CGFloat(175)
 

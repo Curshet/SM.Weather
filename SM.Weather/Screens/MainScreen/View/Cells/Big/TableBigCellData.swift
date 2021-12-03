@@ -1,6 +1,5 @@
 import Foundation
 
-
 protocol TableCellProtocol {}
 
 struct TableBigCellData: TableCellProtocol {

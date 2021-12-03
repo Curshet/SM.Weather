@@ -1,6 +1,5 @@
 import UIKit
 
-
 class MainScreenTableSmallCell: UITableViewCell {
 	
 	static let smallCellIdentifier = "SmallTableCell"

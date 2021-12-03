@@ -1,6 +1,5 @@
 import Foundation
 
-
 public let temperatureSymbol = "º"
 public let feelsLikeSymbol = "ощущается как "
 

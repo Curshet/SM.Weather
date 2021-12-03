@@ -1,6 +1,5 @@
 import UIKit
 
-
 class MainScreenCollectionCell: UICollectionViewCell {
 	
 	static let cellIdentifier = "CollectionCell"
