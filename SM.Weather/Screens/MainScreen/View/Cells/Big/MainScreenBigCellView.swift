@@ -1,5 +1,5 @@
 import UIKit
-
+import SnapKit
 
 class MainScreenTableBigCellView {
 	
@@ -35,12 +35,6 @@ class MainScreenTableBigCellView {
 		labelDownTwo.textColor = .white
 		labelDownTwo.textAlignment = .center
 		labelDownTwo.font = .systemFont(ofSize: 16)
-		
-		backImageView.disableAutoResizingMask()
-		labelUp.disableAutoResizingMask()
-		labelDownOne.disableAutoResizingMask()
-		labelDownTwo.disableAutoResizingMask()
-		middleImageView.disableAutoResizingMask()
 	}
 	
 	private func setupSubViewsInCell(cell: MainScreenTableBigCell) {
@@ -52,31 +46,34 @@ class MainScreenTableBigCellView {
 	}
 	
 	private func setupConstraintsForSubviews(cell: MainScreenTableBigCell) {
-		NSLayoutConstraint.activate([
-			backImageView.topAnchor.constraint(equalTo: cell.topAnchor),
-			backImageView.bottomAnchor.constraint(equalTo: cell.bottomAnchor, constant: -10),
-			backImageView.trailingAnchor.constraint(equalTo: cell.trailingAnchor,constant: -10),
-			backImageView.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 10),
-			
-			labelUp.topAnchor.constraint(equalTo: cell.topAnchor, constant: 18),
-			labelUp.bottomAnchor.constraint(equalTo: cell.bottomAnchor, constant: -240),
-			labelUp.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 70),
-			labelUp.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -70),
-			
-			middleImageView.topAnchor.constraint(equalTo: cell.topAnchor, constant: 75),
-			middleImageView.bottomAnchor.constraint(equalTo: cell.bottomAnchor,constant: -120),
-			middleImageView.widthAnchor.constraint(equalTo: cell.widthAnchor, multiplier: 0.30),
-			middleImageView.heightAnchor.constraint(equalTo: cell.heightAnchor,multiplier: 0.35),
-			middleImageView.centerXAnchor.constraint(equalTo: cell.centerXAnchor),
-			
-			labelDownOne.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 32),
-			labelDownOne.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -32),
-			labelDownOne.topAnchor.constraint(equalTo: cell.topAnchor, constant: 190),
-			
-			labelDownTwo.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 32),
-			labelDownTwo.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -32),
-			labelDownTwo.topAnchor.constraint(equalTo: cell.topAnchor, constant: 250)
-		])
+        backImageView.snp.makeConstraints {
+            $0.top.equalTo(cell)
+            $0.bottom.leading.trailing.equalTo(16)
+        }
+        
+        labelUp.snp.makeConstraints {
+            $0.top.equalTo(cell).inset(18)
+            $0.bottom.equalTo(cell).inset(240)
+            $0.leading.trailing.equalTo(cell).inset(70)
+        }
+        
+        middleImageView.snp.makeConstraints {
+            $0.centerX.equalTo(cell)
+            $0.top.equalTo(cell).inset(75)
+            $0.bottom.equalTo(cell).inset(120)
+            $0.width.equalTo(cell).multipliedBy(0.3)
+            $0.height.equalTo(cell).multipliedBy(0.35)
+        }
+        
+        labelDownOne.snp.makeConstraints {
+            $0.top.equalTo(cell).inset(190)
+            $0.leading.trailing.equalTo(cell).inset(32)
+        }
+        
+        labelDownTwo.snp.makeConstraints {
+            $0.top.equalTo(cell).inset(250)
+            $0.leading.trailing.equalTo(cell).inset(32)
+        }
 	}
 	
 	public func setupContentToFieldsOfCell(_ content: TableBigCellData) {
