@@ -5,9 +5,9 @@ extension UIViewController {
 	static var isDarkMode = false
 	
 	@objc public func darkModeButtonAction() {
-		UIViewController.isDarkMode = !UIViewController.isDarkMode
+		Self.isDarkMode = !Self.isDarkMode
 
-		if UIViewController.isDarkMode {
+		if Self.isDarkMode {
 			overrideUserInterfaceStyle = .dark
 		} else {
 			overrideUserInterfaceStyle = .light
