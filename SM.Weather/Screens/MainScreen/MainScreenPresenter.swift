@@ -12,11 +12,13 @@ class MainScreenPresenter: MainScreenPresenterProtocol {
 		
 		let request = WeatherApiProvider()
 		requestDataFromNetwork = request
-		requestDataFromNetwork?.requestWeatherInfo(success: { [weak self] (data) in
-			self?.setDataFromJson(data)
+		requestDataFromNetwork?.requestWeatherInfo(success: { [weak self] in
+            guard let self = self else { return }
+			self.setDataFromJson($0)
 		},
 		fail: { [weak self] in
-			self?.sendError()
+            guard let self = self else { return }
+			self.sendError()
 		})
 		
 	}
