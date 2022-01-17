@@ -29,18 +29,20 @@ class MainScreenRootViewController: UITableViewController, MainScreenRootViewPro
 		presenter.loadData()
 	}
 	
-	@objc private func refreshProcessor(_ control: UIRefreshControl) {
+	@objc private func refreshProcessor() {
 		presenter.loadData()
-		control.endRefreshing()
 	}
 	
 	public func setContentToCells(cellContent: [TableCellProtocol], titleText: String) {
+        refreshControl?.endRefreshing()
 		rootView.setDataToCells(cellContent: cellContent)
 		title = titleText
 	}
 	
 	public func errorCase() {
-		present(ErrorAlertController().returnErrorMessage(), animated: true, completion: nil)
+        present(ErrorAlertController().returnErrorMessage(), animated: true) {
+            self.refreshControl?.endRefreshing()
+        }
 	}
 	
 }
